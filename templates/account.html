@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+<!--
+{% block style %}
+    body {
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-electronic-technology-website-texture-background-banner-image_156039.jpg'); /* The image used */
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    }
+{% endblock %}
+-->
+{% block main %}
+    <p>Click button to change password.</p>
+    <button onclick="myFunction()" class="btn btn-secondary">Change password</button>
+    <br>
+    <form action="/account" method="post" id="changePassword">
+        <!-- re-type password -->
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="oldPassword" placeholder="Old Password" type="password">
+        </div>
+        <!-- new password -->
+        <div class="form-group">
+            <input class="form-control" name="newPassword" placeholder="New Password" type="password">
+        </div>
+        <!-- confirmation -->
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Confirmation" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+    <script>
+    function myFunction() {
+        var x = document.getElementById("changePassword");
+        
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        }
+        else {
+            x.style.display = "none";
+        }
+    }
+    </script>
+{% endblock %}
